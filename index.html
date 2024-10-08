@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<!-- saved from url=(0031)http://localhost/eval/login.php -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home | Evaluation System</title>
+  
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="./index_files/css">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="./index_files/all.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="./index_files/ionicons.min.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="./index_files/OverlayScrollbars.min.css">
+    <!-- DataTables -->
+  <link rel="stylesheet" href="./index_files/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="./index_files/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="./index_files/buttons.bootstrap4.min.css">
+   <!-- Select2 -->
+  <link rel="stylesheet" href="./index_files/select2.min.css">
+  <link rel="stylesheet" href="./index_files/select2-bootstrap4.min.css">
+   <!-- SweetAlert2 -->
+  <link rel="stylesheet" href="./index_files/bootstrap-4.min.css">
+   <!-- Jquery-UI -->
+  <link rel="stylesheet" href="./index_files/jquery-ui.min.css">
+  <!-- Toastr -->
+  <link rel="stylesheet" href="./index_files/toastr.min.css">
+  <!-- dropzonejs -->
+  <link rel="stylesheet" href="./index_files/dropzone.min.css">
+  <!-- DateTimePicker -->
+  <link rel="stylesheet" href="./index_files/jquery.datetimepicker.min.css">
+  <!-- iCheck for checkboxes and radio inputs -->
+  <link rel="stylesheet" href="./index_files/icheck-bootstrap.min.css">
+  <!-- Switch Toggle -->
+  <link rel="stylesheet" href="./index_files/bootstrap4-toggle.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="./index_files/adminlte.min.css">
+  <link rel="stylesheet" href="./index_files/styles.css">
+	<script src="./index_files/jquery.min.js.download"></script>
+  <!-- jQuery UI 1.11.4 -->
+  <script src="./index_files/jquery-ui.min.js.download"></script>
+ <!-- summernote -->
+  <link rel="stylesheet" href="./index_files/summernote-bs4.min.css">
+   <!-- Jquery-UI -->
+  
+<style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden; /* Prevent scrolling */
+    }
+
+    .login-box h5 {
+      font-size: 24px; /* Increase the font size of the heading */
+    }
+
+    .login-card-body {
+      font-size: 22px; /* Increase the font size for the form inputs and labels */
+    }
+
+    .input-group .form-control {
+      font-size: 16px; /* Adjust the font size of the input fields */
+    }
+
+    .bg-slider {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      display: none; /* Hide slides by default */
+      filter: blur(2px); /* Adjust the blur level */
+    }
+
+    .slide:first-child {
+      display: block; /* Show the first slide */
+    }
+
+    .login-box {
+      position: relative; 
+      z-index: 1; 
+      padding: 20px; 
+      background: rgba(255, 255, 255, 0.8); 
+      border-radius: 10px; 
+      text-align: center; /* Center all content inside */
+    }
+
+    .create-account-btn {
+      display: inline-block; 
+      background: linear-gradient(45deg, #6a11cb, #2575fc); 
+      color: white; 
+      border: none; 
+      border-radius: 5px; 
+      padding: 10px 20px; 
+      font-size: 16px; 
+      transition: background 0.3s; 
+      text-decoration: none; /* Remove underline */
+      margin-top: 10px; /* Add space above */
+    }
+
+    .create-account-btn:hover {
+      background: linear-gradient(45deg, #2575fc, #6a11cb); 
+      color: white;
+      text-decoration: none; /* Ensure no underline on hover */
+    }
+
+    .login-options {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .login-options label,
+    .login-options a {
+      font-size: 14px; /* Adjust the font size for Remember Me and Forgot Password */
+    }
+
+    .login-options a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .login-options a:hover {
+      text-decoration: underline;
+    }
+
+    .btn-container {
+      margin-top: 15px; /* Add margin for better spacing */
+    }
+  </style><style data-jss="" data-meta="MuiDialog">
+@media print {
+  .MuiDialog-root {
+    position: absolute !important;
+  }
+}
+.MuiDialog-scrollPaper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.MuiDialog-scrollBody {
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-align: center;
+}
+.MuiDialog-scrollBody:after {
+  width: 0;
+  height: 100%;
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+}
+.MuiDialog-container {
+  height: 100%;
+  outline: 0;
+}
+@media print {
+  .MuiDialog-container {
+    height: auto;
+  }
+}
+.MuiDialog-paper {
+  margin: 32px;
+  position: relative;
+  overflow-y: auto;
+}
+@media print {
+  .MuiDialog-paper {
+    box-shadow: none;
+    overflow-y: visible;
+  }
+}
+.MuiDialog-paperScrollPaper {
+  display: flex;
+  max-height: calc(100% - 64px);
+  flex-direction: column;
+}
+.MuiDialog-paperScrollBody {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+.MuiDialog-paperWidthFalse {
+  max-width: calc(100% - 64px);
+}
+.MuiDialog-paperWidthXs {
+  max-width: 444px;
+}
+@media (max-width:507.95px) {
+  .MuiDialog-paperWidthXs.MuiDialog-paperScrollBody {
+    max-width: calc(100% - 64px);
+  }
+}
+.MuiDialog-paperWidthSm {
+  max-width: 600px;
+}
+@media (max-width:663.95px) {
+  .MuiDialog-paperWidthSm.MuiDialog-paperScrollBody {
+    max-width: calc(100% - 64px);
+  }
+}
+.MuiDialog-paperWidthMd {
+  max-width: 960px;
+}
+@media (max-width:1023.95px) {
+  .MuiDialog-paperWidthMd.MuiDialog-paperScrollBody {
+    max-width: calc(100% - 64px);
+  }
+}
+.MuiDialog-paperWidthLg {
+  max-width: 1280px;
+}
+@media (max-width:1343.95px) {
+  .MuiDialog-paperWidthLg.MuiDialog-paperScrollBody {
+    max-width: calc(100% - 64px);
+  }
+}
+.MuiDialog-paperWidthXl {
+  max-width: 1920px;
+}
+@media (max-width:1983.95px) {
+  .MuiDialog-paperWidthXl.MuiDialog-paperScrollBody {
+    max-width: calc(100% - 64px);
+  }
+}
+.MuiDialog-paperFullWidth {
+  width: calc(100% - 64px);
+}
+.MuiDialog-paperFullScreen {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  max-width: 100%;
+  max-height: none;
+  border-radius: 0;
+}
+.MuiDialog-paperFullScreen.MuiDialog-paperScrollBody {
+  margin: 0;
+  max-width: 100%;
+}
+</style></head>
+  
+
+<body class="login-page bg-blue" style="min-height: 457.95px;">
+
+  <div class="login-box">
+    <div class="login-logo">
+      <!-- Logo can be added here -->
+    </div>
+    <h5 class="text-center" style="color: black;"><b>Evaluation System - Login</b></h5>
+
+    <div class="card">
+      <div class="card-body login-card-body">
+        <form action="http://localhost/eval/login.php" id="login-form">
+          <div class="input-group mb-3">
+            <input type="email" class="form-control" name="email" required="" placeholder="Email">
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-envelope"></span>
+              </div>
+            </div>
+          </div>
+          <div class="input-group mb-3">
+            <input type="password" class="form-control" name="password" required="" placeholder="Password">
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-lock"></span>
+              </div>
+            </div>
+          </div>
+          <div class="form-group mb-3">
+            <label for="">Login As</label>
+            <select name="login" class="custom-select custom-select-sm">
+              <option value="3">Student</option>
+              <option value="2">Lecturer</option>
+              <option value="1">Admin</option>
+            </select>
+          </div>
+          <div class="login-options">
+            <div class="icheck-primary">
+              <input type="checkbox" id="remember">
+              <label for="remember">Remember Me</label>
+            </div>
+          </div>
+          <div class="btn-container">
+            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+          </div>
+        </form>
+        <div class="text-center mt-3">
+          <a href="http://localhost/eval/create_account.php" class="create-account-btn">Create Account</a>
+        </div>
+      </div>
+      <!-- /.login-card-body -->
+    </div>
+  </div>
+
+  <script>
+    $(document).ready(function(){
+      $('#login-form').submit(function(e){
+        e.preventDefault();
+        start_load();
+        if($(this).find('.alert-danger').length > 0)
+          $(this).find('.alert-danger').remove();
+        $.ajax({
+          url:'ajax.php?action=login',
+          method:'POST',
+          data:$(this).serialize(),
+          error: err => {
+            console.log(err);
+            end_load();
+          },
+          success: function(resp){
+            if(resp == 1){
+              location.href ='index.php?page=home';
+            } else {
+              $('#login-form').prepend('<div class="alert alert-danger">Username or password is incorrect.</div>');
+              end_load();
+            }
+          }
+        });
+      });
+
+      // Background slider logic
+      let currentIndex = 0;
+      const slides = document.querySelectorAll('.slide');
+      const totalSlides = slides.length;
+
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.style.display = i === index ? 'block' : 'none';
+        });
+      }
+
+      function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        showSlide(currentIndex);
+      }
+
+      showSlide(currentIndex);
+      setInterval(nextSlide, 5000); // Change slide every 5 seconds
+    });
+  </script>
+  <!-- SweetAlert2 -->
+<script src="./index_files/sweetalert2.min.js.download"></script>
+<!-- Toastr -->
+<script src="./index_files/toastr.min.js.download"></script>
+<!-- Switch Toggle -->
+<script src="./index_files/bootstrap4-toggle.min.js.download"></script>
+<!-- Select2 -->
+<script src="./index_files/select2.full.min.js.download"></script>
+<!-- Summernote -->
+<script src="./index_files/summernote-bs4.min.js.download"></script>
+<!-- dropzonejs -->
+<script src="./index_files/dropzone.min.js.download"></script>
+<script src="./index_files/bs-custom-file-input.min.js.download"></script>
+<!-- DateTimePicker -->
+  <script src="./index_files/jquery.datetimepicker.full.min.js.download"></script>
+  <!-- Bootstrap Switch -->
+<script src="./index_files/bootstrap-switch.min.js.download"></script>
+ <!-- MOMENT -->
+<script src="./index_files/moment.min.js.download"></script>
+<script>
+	$(document).ready(function(){
+	  $('.select2').select2({
+	    placeholder:"Please select here",
+	    width: "100%"
+	  });
+  })
+	 window.start_load = function(){
+	    $('body').prepend('<div id="preloader2"></div>')
+	  }
+	  window.end_load = function(){
+	    $('#preloader2').fadeOut('fast', function() {
+	        $(this).remove();
+	      })
+	  }
+	 window.viewer_modal = function($src = ''){
+	    start_load()
+	    var t = $src.split('.')
+	    t = t[1]
+	    if(t =='mp4'){
+	      var view = $("<video src='"+$src+"' controls autoplay></video>")
+	    }else{
+	      var view = $("<img src='"+$src+"' />")
+	    }
+	    $('#viewer_modal .modal-content video,#viewer_modal .modal-content img').remove()
+	    $('#viewer_modal .modal-content').append(view)
+	    $('#viewer_modal').modal({
+	            show:true,
+	            backdrop:'static',
+	            keyboard:false,
+	            focus:true
+	          })
+	          end_load()  
+
+	}
+	  window.uni_modal = function($title = '' , $url='',$size=""){
+	      start_load()
+	      $.ajax({
+	          url:$url,
+	          error:err=>{
+	              console.log()
+	              alert("An error occured")
+	          },
+	          success:function(resp){
+	              if(resp){
+	                  $('#uni_modal .modal-title').html($title)
+	                  $('#uni_modal .modal-body').html(resp)
+	                  if($size != ''){
+	                      $('#uni_modal .modal-dialog').addClass($size)
+	                  }else{
+	                      $('#uni_modal .modal-dialog').removeAttr("class").addClass("modal-dialog modal-md")
+	                  }
+	                  $('#uni_modal').modal({
+	                    show:true,
+	                    backdrop:'static',
+	                    keyboard:false,
+	                    focus:true
+	                  })
+	                  end_load()
+	              }
+	          }
+	      })
+	  }
+	  window._conf = function($msg='',$func='',$params = []){
+	     $('#confirm_modal #confirm').attr('onclick',$func+"("+$params.join(',')+")")
+	     $('#confirm_modal .modal-body').html($msg)
+	     $('#confirm_modal').modal('show')
+	  }
+	   window.alert_toast= function($msg = 'TEST',$bg = 'success' ,$pos=''){
+	   	 var Toast = Swal.mixin({
+	      toast: true,
+	      position: $pos || 'top-end',
+	      showConfirmButton: false,
+	      timer: 5000
+	    });
+	      Toast.fire({
+	        icon: $bg,
+	        title: $msg
+	      })
+	  }
+$(function () {
+  bsCustomFileInput.init();
+
+    $('.summernote').summernote({
+        height: 300,
+        toolbar: [
+            [ 'style', [ 'style' ] ],
+            [ 'font', [ 'bold', 'italic', 'underline', 'strikethrough', 'superscript', 'subscript', 'clear'] ],
+            [ 'fontname', [ 'fontname' ] ],
+            [ 'fontsize', [ 'fontsize' ] ],
+            [ 'color', [ 'color' ] ],
+            [ 'para', [ 'ol', 'ul', 'paragraph', 'height' ] ],
+            [ 'table', [ 'table' ] ],
+            [ 'view', [ 'undo', 'redo', 'fullscreen', 'codeview', 'help' ] ]
+        ]
+    })
+
+     $('.datetimepicker').datetimepicker({
+		  format:'Y/m/d H:i',
+		})
+    
+
+  })
+ $(".switch-toggle").bootstrapToggle();
+$('.number').on('input keyup keypress',function(){
+        var val = $(this).val()
+        val = val.replace(/[^0-9]/, '');
+        val = val.replace(/,/g, '');
+        val = val > 0 ? parseFloat(val).toLocaleString("en-US") : 0;
+        $(this).val(val)
+    })
+</script>
+<script src="./index_files/bootstrap.bundle.min.js.download"></script>
+<!-- overlayScrollbars -->
+<script src="./index_files/jquery.overlayScrollbars.min.js.download"></script>
+<!-- AdminLTE App -->
+<script src="./index_files/adminlte.js.download"></script>
+
+<!-- PAGE assets/plugins -->
+<!-- jQuery Mapael -->
+<script src="./index_files/jquery.mousewheel.js.download"></script>
+<script src="./index_files/raphael.min.js.download"></script>
+<script src="./index_files/jquery.mapael.min.js.download"></script>
+<script src="./index_files/usa_states.min.js.download"></script>
+<!-- ChartJS -->
+<script src="./index_files/Chart.min.js.download"></script>
+
+<!-- AdminLTE for demo purposes -->
+<script src="./index_files/demo.js.download"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="./index_files/dashboard2.js.download"></script>
+<!-- DataTables  & Plugins -->
+<script src="./index_files/jquery.dataTables.min.js.download"></script>
+<script src="./index_files/dataTables.bootstrap4.min.js.download"></script>
+<script src="./index_files/dataTables.responsive.min.js.download"></script>
+<script src="./index_files/responsive.bootstrap4.min.js.download"></script>
+<script src="./index_files/dataTables.buttons.min.js.download"></script>
+<script src="./index_files/buttons.bootstrap4.min.js.download"></script>
+<script src="./index_files/jszip.min.js.download"></script>
+<script src="./index_files/pdfmake.min.js.download"></script>
+<script src="./index_files/vfs_fonts.js.download"></script>
+<script src="./index_files/buttons.html5.min.js.download"></script>
+<script src="./index_files/buttons.print.min.js.download"></script>
+<script src="./index_files/buttons.colVis.min.js.download"></script>
+
+
+
+<div id="1165A544-BF61-9293-D496-C8F55619F652"></div></body></html>
